@@ -1,0 +1,60 @@
+.movie-card {
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+    transform-origin: center top;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    transition: 0.3s;
+}
+
+.movie-card .movie-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    margin-bottom: 0;
+    font-size: 20px;
+    background: none;
+    color: #fff;
+    transform: translateY(100%);
+    transition: 0.3s;
+}
+
+.movie-card:after {
+    position: absolute;
+    content: '';
+    z-index: 10;
+    width: 200%;
+    height: 100%;
+    top: -90%;
+    left: -20px;
+    opacity: 0.1;
+    transform: rotate(45deg);
+    background: linear-gradient(to top, transparent, #fff 15%, rgba(255, 255, 255, 0.5));
+    transition: 0.3s;
+}
+
+.movie-card:hover,
+.movie-card:focus,
+.movie-card:active {
+    box-shadow: 0 8px 16px 3px rgba(0, 0, 0, 0.6);
+    transform: translateY(-3px) scale(1.05) rotateX(13deg);
+}
+
+.movie-card:hover .movie-name,
+.movie-card:focus .movie-name,
+.movie-card:active .movie-name {
+    transform: none;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 35%, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3), transparent);
+}
+
+.movie-card:hover:after,
+.movie-card:focus:after,
+.movie-card:active:after {
+    transform: rotate(25deg);
+    top: -40%;
+    opacity: 0.15;
+}
